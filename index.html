@@ -1908,7 +1908,7 @@ function handleSubmit(e) {
   const btn = e.target.querySelector('button[type="submit"]');
   btn.disabled = true; btn.textContent = '送信中…';
 
-  fetch(GAS_ENDPOINT_URL, {https://script.google.com/macros/s/AKfycbyDsbnfO-ngIG-TGcK90Cxrnh_hSPhLSXEIYZUoH7dpVG6TQLplMEP3N8tMF8MdC0vO/exec}
+  fetch(GAS_ENDPOINT_URL, {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -2108,8 +2108,9 @@ function fmtZip(el) {
   if (v.length>3) v=v.slice(0,3)+'-'+v.slice(3,7);
   el.value=v;
 }
-// ⚠️ ここにGASのWebアプリURLを貼り付けてください（設定方法は別途ご案内します）
-const GAS_ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbyUZ_WpHdLRJQxARRaFf5nhmfIPP0JFqmbLBIrcB8ILYy-FLUUQ0G8n8deKBsM_v54/exec';
+// ⚠️ GASのWebアプリURL。再デプロイでURLが変わったときは、
+//    必ず「この下の1行の ' ' の中だけ」を差し替えてください。
+const GAS_ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbyDsbnfO-ngIG-TGcK90Cxrnh_hSPhLSXEIYZUoH7dpVG6TQLplMEP3N8tMF8MdC0vO/exec';
 
 function submitOrder() {
   const keys = Object.keys(cart).filter(k=>cart[k]>0 && PRODUCTS[k]);
