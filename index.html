@@ -1908,10 +1908,10 @@ function handleSubmit(e) {
   const btn = e.target.querySelector('button[type="submit"]');
   btn.disabled = true; btn.textContent = '送信中…';
 
-  fetch(GAS_ENDPOINT_URL, {
+  fetch(GAS_ENDPOINT_URL, {https://script.google.com/macros/s/AKfycbyDsbnfO-ngIG-TGcK90Cxrnh_hSPhLSXEIYZUoH7dpVG6TQLplMEP3N8tMF8MdC0vO/exec}
     method: 'POST',
     mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
     body: JSON.stringify({
       type: 'contact',
       contactDate: new Date().toLocaleString('ja-JP'),
@@ -2162,7 +2162,7 @@ function submitOrder() {
   fetch(GAS_ENDPOINT_URL, {
     method: 'POST',
     mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
     body: JSON.stringify(orderData)
   })
   .then(() => {
